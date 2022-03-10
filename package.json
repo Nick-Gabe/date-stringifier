@@ -1,0 +1,24 @@
+{
+  "name": "date-stringifier",
+  "version": "1.0.0",
+  "description": "Format your date into a string however you like.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tobeadded"
+  },
+  "keywords": [
+    "date",
+    "format",
+    "string"
+  ],
+  "author": {
+    "name": "Nícolas Gabriel",
+    "email": "nicolasgabrielctt@gmail.com"
+  },
+  "homepage": "tobeadded",
+  "license": "MIT"
+}
