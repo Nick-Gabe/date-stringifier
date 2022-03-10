@@ -13,7 +13,7 @@ npm install date-stringifier
 ## 📚 How to use:
 First you will need to import the package.
 
-Then you can use it as a function, passing a Date created using the [Date Constructor](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date), and how you want the formatted output to be. You can use [Date variables](#dateVariables) in your string, as shown in the example below:
+Then you can use it as a function, passing a Date created using the [Date Constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), and how you want the formatted output to be. You can use [Date variables](#dateVariables) in your string, as shown in the example below:
 ```javascript
 const dateStringifier = require('date-stringifier')
 const date = new Date(1995, 11, 17)
