@@ -1,4 +1,7 @@
 # *Date Stringify*
+![](https://img.shields.io/github/license/Nick-Gabe/date-stringify)
+![](https://img.shields.io/github/issues/Nick-Gabe/date-stringify)
+![](https://img.shields.io/github/package-json/v/Nick-Gabe/date-stringify)
 
 Date Stringify is a package created exclusively for Date Formatting. Trying to be simple and direct as possible.
 

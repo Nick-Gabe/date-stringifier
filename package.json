@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "tobeadded"
+    "url": "https://github.com/Nick-Gabe/date-stringify"
   },
   "keywords": [
     "date",
@@ -19,6 +19,6 @@
     "name": "Nícolas Gabriel",
     "email": "nicolasgabrielctt@gmail.com"
   },
-  "homepage": "tobeadded",
+  "homepage": "https://github.com/Nick-Gabe/date-stringify",
   "license": "MIT"
 }
