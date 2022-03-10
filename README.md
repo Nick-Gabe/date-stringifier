@@ -1,5 +1,5 @@
 # *Date Stringifier*
-![](https://img.shields.io/github/license/Nick-Gabe/date-stringifier)
+![](https://img.shields.io/github/license/Nick-gabe/date-stringifier)
 ![](https://img.shields.io/github/issues/Nick-Gabe/date-stringifier)
 ![](https://img.shields.io/github/package-json/v/Nick-Gabe/date-stringifier)
 
