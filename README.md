@@ -1,13 +1,13 @@
-# *Date Stringify*
-![](https://img.shields.io/github/license/Nick-Gabe/date-stringify)
-![](https://img.shields.io/github/issues/Nick-Gabe/date-stringify)
-![](https://img.shields.io/github/package-json/v/Nick-Gabe/date-stringify)
+# *Date Stringifier*
+![](https://img.shields.io/github/license/Nick-Gabe/date-stringifier)
+![](https://img.shields.io/github/issues/Nick-Gabe/date-stringifier)
+![](https://img.shields.io/github/package-json/v/Nick-Gabe/date-stringifier)
 
-Date Stringify is a package created exclusively for Date Formatting. Trying to be simple and direct as possible.
+Date Stringifier is a package created exclusively for Date Formatting. Trying to be simple and direct as possible.
 
 ## 🚀 How To install:
 ```
-npm install date-stringify
+npm install date-stringifier
 ```
 
 ## 📚 How to use:
@@ -15,10 +15,10 @@ First you will need to import the package.
 
 Then you can use it as a function, passing a Date created using the [Date Constructor](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date), and how you want the formatted output to be. You can use [Date variables](#dateVariables) in your string, as shown in the example below:
 ```javascript
-const dateStringify = require('date-stringify')
+const dateStringifier = require('date-stringifier')
 const date = new Date(1995, 11, 17)
 
-console.log(dateStringify(date, '{DD}/{MM}/{yyyy}')
+console.log(dateStringifier(date, '{DD}/{MM}/{yyyy}')
 // It will print 17/12/1995
 // *Months are zero indexed, so it adds one
 ```
