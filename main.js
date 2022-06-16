@@ -11,7 +11,17 @@ function formatDate(date = new Date(), format = '{DD}/{MM}/{yyyy}') {
 
   const hours = ['Twenty-Four', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty', 'Twenty-One', 'Twenty-Two', 'Twenty-Three']
 
+  const elapsed = Math.floor((new Date().getTime() - date.getTime()) / 1000 / 60)
+  if(format.includes('ago')) {
+    if(elapsed < 1) return 'Some seconds ago'
+    else if(elapsed < 60) return `${elapsed} minute${elapsed > 1 ? 's': ''} ago`
+    else if(elapsed < 1440) return `${Math.floor(elapsed / 60)} hour${elapsed / 60 > 1 ? 's' : ''} ago`
+    else if(elapsed < 10080) return `${Math.floor(elapsed / 1440)} day${elapsed / 1440 > 1 ? 's' : ''} ago`
+    else format = '{zDD}/{zMM}/{yyyy}'
+  }
+
   const replacements = {
+    ago: elapsed < 60 ,
     yy: date.getFullYear().toString().slice(2),
     yyyy: date.getFullYear(),
 
