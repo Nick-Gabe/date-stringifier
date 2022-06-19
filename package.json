@@ -1,6 +1,6 @@
 {
   "name": "date-stringifier",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Format your date into a string however you like.",
   "main": "main.js",
   "scripts": {

@@ -15,8 +15,8 @@ function formatDate(date = new Date(), format = '{DD}/{MM}/{yyyy}') {
   if(format.includes('ago')) {
     if(elapsed < 1) return 'Some seconds ago'
     else if(elapsed < 60) return `${elapsed} minute${elapsed > 1 ? 's': ''} ago`
-    else if(elapsed < 1440) return `${Math.floor(elapsed / 60)} hour${elapsed / 60 > 1 ? 's' : ''} ago`
-    else if(elapsed < 10080) return `${Math.floor(elapsed / 1440)} day${elapsed / 1440 > 1 ? 's' : ''} ago`
+    else if(elapsed < 1440) return `${Math.floor(elapsed / 60)} hour${Math.floor(elapsed / 60) > 1 ? 's' : ''} ago`
+    else if(elapsed < 10080) return `${Math.floor(elapsed / 1440)} day${Math.floor(elapsed / 1440) > 1 ? 's' : ''} ago`
     else format = '{zDD}/{zMM}/{yyyy}'
   }
 
