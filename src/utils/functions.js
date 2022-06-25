@@ -9,7 +9,7 @@ module.exports = {
   },
   verifyLanguage(json, language) {
     if(!json[language]) {
-      throw new DateStringifierError(`${language} is not a valid language.`)
+      throw new DateStringifierError(`${language} is not a valid language`)
     }
   }
 }
