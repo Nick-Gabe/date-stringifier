@@ -15,7 +15,6 @@ module.exports = {
       minutes = Math.floor(elapsed / 60),
       hours = Math.floor(elapsed / 3600),
       days = Math.floor(elapsed / 86400)
-    console.log('👨‍⚖️', days, hours, minutes, seconds)
 
     // Less than a minute
     if (elapsed < 60) {
