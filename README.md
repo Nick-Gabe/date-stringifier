@@ -18,9 +18,19 @@ Then you can use it as a function, passing a Date created using the [Date Constr
 const dateStringifier = require('date-stringifier')
 const date = new Date(1995, 11, 17)
 
-console.log(dateStringifier(date, '{DD}/{MM}/{yyyy}')
+console.log(dateStringifier(date, '{DD}/{MM}/{yyyy}'))
 // It will print 17/12/1995
 // *Months are zero indexed, so it adds one
+```
+You can also specify the language you want the result to be, if you don't specify, it will be set to English by default. The available languages are:
+- `en` - English
+- `pt` - Portuguese
+```javascript
+const date = new Date()
+const english = dateStringifier(date, 'Today is the {oDD} day of {month}', 'en')
+// Today is the 25th day of June
+const portuguese = dateStringifier(date, 'Hoje é o {oDD} dia de {month}', 'pt')
+// Hoje é o 25º dia de Junho
 ```
 
 <h2 id="dateVariables"> 📅 Date Variables </h2>
@@ -68,9 +78,11 @@ These are the Date variables you can use in your string:
 | `zhh12` | Hour in 12:00 format, with a zero if it is below 10. | 01, 02... 11, 12, 01.
 | `hhp` | The hour period, returns AM if it is between 00:00-11:59 and PM if it is between 12:00-23:59. | AM or PM.
 |<h3 id="Minutes">**Minutes**</h3>|
+| `minute` | Minute in text | One, Two... Fifty-eight, Fifty-nine.
 | `mm` | Minutes. | 1, 2... 58, 59.
 | `zmm` | Minutes, with a zero if it is below 10. | 01, 02... 58, 59.
 |<h3 id="Seconds">**Seconds**</h3>|
+| `second` | Second in text | One, Two... Fifty-eight, Fifty-nine.
 | `ss` | Seconds. | 1, 2... 58, 59.
 | `zss` | Seconds, with a zero if it is below 10. | 01, 02... 58, 59.
 |<h3 id="Milliseconds">**Milliseconds**</h3>|
@@ -81,7 +93,7 @@ These are the Date variables you can use in your string:
 |<h3 id="Others">**Others**</h3>|
 | `unixms` | How many seconds have passed since January 1st of 1970, including milliseconds. | 1610309753427, 1646932270794...
 | `unix` | How many seconds have passed since January 1st of 1970. | 1610309753, 1646932270...
-| `ago` | The date time that has passed compared to now. | Some seconds ago, 2 hours ago...
+| `ago` | The date time that has passed compared to now. | 7 seconds ago, 2 hours ago...
 
 ## 🐉 Info
 This package is open source, feel free to contribute through GitHub.

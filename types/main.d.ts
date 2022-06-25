@@ -1,0 +1,1 @@
+declare function dateStringifier(date: Date, format: string, language?: availableLanguages): number

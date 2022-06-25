@@ -1,8 +1,8 @@
 {
   "name": "date-stringifier",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Format your date into a string however you like.",
-  "main": "main.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,7 @@
     "name": "Nícolas Gabriel",
     "email": "nicolasgabrielctt@gmail.com"
   },
+  "types": "./types/index.d.ts",
   "homepage": "https://github.com/Nick-Gabe/date-stringifier",
   "license": "MIT"
 }
