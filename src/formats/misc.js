@@ -12,16 +12,17 @@ module.exports = {
     const elapsed = Math.floor((new Date().getTime() - date.getTime()) / 1000)
 
     const seconds = elapsed,
-    minutes = Math.floor(elapsed / 60),
-    hours = Math.floor(elapsed / 360),
-    days = Math.floor(elapsed / 86400)
+      minutes = Math.floor(elapsed / 60),
+      hours = Math.floor(elapsed / 3600),
+      days = Math.floor(elapsed / 86400)
+    console.log('👨‍⚖️', days, hours, minutes, seconds)
 
     // Less than a minute
     if (elapsed < 60) {
       return `${seconds} ${second}${plural(elapsed)} ${ago}`
     }
     // Less than an hour
-    else if (elapsed < 360) {
+    else if (elapsed < 3600) {
       return `${minutes} ${minute}${plural(minutes)} ${ago}`
     }
     // Less than a day

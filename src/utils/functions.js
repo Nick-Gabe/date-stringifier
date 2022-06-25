@@ -5,7 +5,7 @@ module.exports = {
     return num < 10 ? '0' + num : num
   },
   plural(expression) {
-    return Math.floor(expression) > 1 ? 's' : ''
+    return Math.floor(expression) !== 1 ? 's' : ''
   },
   verifyLanguage(json, language) {
     if(!json[language]) {
