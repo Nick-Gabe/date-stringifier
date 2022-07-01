@@ -1,5 +1,5 @@
 const { days, ordinal } = require('../json/literalDates.json')
-const { addZero, verifyLanguage } = require('../utils/functions')
+const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
 
 module.exports = {
   day: (date, lang) => {
@@ -18,6 +18,7 @@ module.exports = {
     const ordinalChar = ordinalList[lastDigit] ?? ordinalList.default
     return `${date.getDate()}${ordinalChar}`
   },
-  dds: (date) => date.getDay() + 1,
-  ddm: (date) => date.getDay() === 0 ? 7 : date.getDay()
+  DDs: (date) => date.getDay() + 1,
+  DDm: (date) => date.getDay() === 0 ? 7 : date.getDay(),
+  DDrel: (date, lang) => getRelative('day', date, lang)
 }

@@ -8,20 +8,28 @@
     },
     "pt": "º"
   },
-  "agoTranslations": {
+  "relativeTranslations": {
     "en": {
       "second": "second",
       "minute": "minute",
       "hour": "hour",
       "day": "day",
-      "ago": "ago"
+      "week": "week",
+      "month": "month",
+      "year": "year",
+      "ago": "ago",
+      "fromnow": "in"
     },
     "pt": {
       "second": "segundo",
       "minute": "minuto",
       "hour": "hora",
       "day": "dia",
-      "ago": "atrás"
+      "week": "semana",
+      "month": ["mês", "meses"],
+      "year": "ano",
+      "ago": "atrás",
+      "fromnow": "em"
     }
   },
   "months": {

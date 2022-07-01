@@ -1,5 +1,5 @@
 const { hours } = require('../json/literalDates.json')
-const { addZero, verifyLanguage } = require('../utils/functions')
+const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
 
 module.exports = {
   hour: (date, lang) => {
@@ -16,5 +16,6 @@ module.exports = {
   },
   hh12: (date) => date.getHours() % 12 === 0 ? 12 : date.getHours() % 12,
   zhh12: (date) => addZero(date.getHours() % 12 === 0 ? 12 : date.getHours() % 12),
-  hhp: (date) => date.getHours() >= 12 ? 'PM' : 'AM'
+  hhp: (date) => date.getHours() >= 12 ? 'PM' : 'AM',
+  hhrel: (date, lang) => getRelative('hour', date, lang)
 }
