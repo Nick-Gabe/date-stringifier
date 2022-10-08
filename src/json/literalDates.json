@@ -18,7 +18,7 @@
       "month": "month",
       "year": "year",
       "ago": "ago",
-      "fromnow": "in"
+      "fromNow": "in"
     },
     "pt": {
       "second": "segundo",
@@ -29,7 +29,7 @@
       "month": ["mês", "meses"],
       "year": "ano",
       "ago": "atrás",
-      "fromnow": "em"
+      "fromNow": "em"
     }
   },
   "months": {

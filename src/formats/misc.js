@@ -8,7 +8,7 @@ module.exports = {
   rel: (date, lang) => {
     verifyLanguage(relativeTranslations, lang)
 
-    const { second, minute, day, hour, ago, fromnow } = relativeTranslations[lang]
+    const { second, minute, day, hour, ago, fromNow } = relativeTranslations[lang]
 
     const elapsed = Math.floor((new Date().getTime() - date.getTime()) / 1000)
 
@@ -20,19 +20,19 @@ module.exports = {
     if(elapsed <= 0) {
       // Less than a minute
       if (elapsed > -60) {
-        return `${fromnow} ${seconds} ${second+plural(elapsed)}`
+        return `${fromNow} ${seconds} ${second+plural(elapsed)}`
       }
       // Less than an hour
       else if (elapsed > -3600) {
-        return `${fromnow} ${minutes} ${minute+plural(minutes)}`
+        return `${fromNow} ${minutes} ${minute+plural(minutes)}`
       }
       // Less than a day
       else if (elapsed > -86400) {
-        return `${fromnow} ${hours} ${hour+plural(hours)}`
+        return `${fromNow} ${hours} ${hour+plural(hours)}`
       }
       // Less than a week
       else if (elapsed > -604800) {
-        return `${fromnow} ${days} ${day+plural(days)}`
+        return `${fromNow} ${days} ${day+plural(days)}`
       }
     }
     else {
