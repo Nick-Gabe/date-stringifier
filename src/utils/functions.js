@@ -17,7 +17,7 @@ module.exports = {
     const { verifyLanguage, plural } = require('./functions.js')
     verifyLanguage(relativeTranslations, lang)
     const translations = relativeTranslations[lang]
-    const { ago, fromnow } = translations
+    const { ago, fromNow } = translations
 
     const second = 1,
       minute = second * 60,
@@ -38,7 +38,7 @@ module.exports = {
       : translations[type] + plural(time)
 
     if(elapsed <= 0) {
-      return `${fromnow} ${time} ${hasPlural}`
+      return `${fromNow} ${time} ${hasPlural}`
     }
     return `${time} ${hasPlural} ${ago}`
   }
