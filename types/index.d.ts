@@ -1,12 +1,23 @@
-declare type AvailableLanguages = 'en' | 'pt'
+declare type AvailableLanguages = 'en' | 'pt';
 
-declare type DateStringifier = (date: Date, format?: string, language?: AvailableLanguages) => string
+declare type DateStringifier = (
+  date: Date,
+  format?: string,
+  language?: AvailableLanguages,
+) => string;
 
-declare type DateReplacer = {
-  [key: string]: (date: Date, lang: AvailableLanguages) => string | number
+declare interface DateReplacer {
+  [key: string]: (date: Date, lang: AvailableLanguages) => string | number;
 }
 declare interface ErrorConstructor {
-  captureStackTrace(thisArg: any, func: any): void
+  captureStackTrace: (thisArg: unknown, func: unknown) => void;
 }
 
-declare type TimeTypes =  'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year' 
+declare type TimeTypes =
+  | 'second'
+  | 'minute'
+  | 'hour'
+  | 'day'
+  | 'week'
+  | 'month'
+  | 'year';
