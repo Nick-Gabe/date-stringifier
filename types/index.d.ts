@@ -1,4 +1,7 @@
-type availableLanguages = 'en' | 'pt'
+declare type AvailableLanguages = 'en' | 'pt'
 
-/// <reference path="main.d.ts" />
-/// <reference path="utils.d.ts" />
+declare type DateStringifier = (date: Date, format: string, language: AvailableLanguages) => string
+
+interface ErrorConstructor {
+  captureStackTrace(thisArg: any, func: any): void
+}
