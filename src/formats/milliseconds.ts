@@ -1,5 +1,5 @@
 const millisecondsReplacer: DateReplacer = {
-  ms: (date) => date.getMilliseconds()
-}
+  ms: date => date.getMilliseconds(),
+};
 
-export default millisecondsReplacer
+export default millisecondsReplacer;
