@@ -1,15 +1,24 @@
 import { DateStringifierError } from './utils/classes'
+import years from './formats/years'
+import months from './formats/months'
+import days from './formats/days'
+import hours from './formats/hours'
+import minutes from './formats/minutes'
+import seconds from './formats/seconds'
+import milliseconds from './formats/milliseconds'
+import timezone from './formats/timezone'
+import misc from './formats/misc'
 
 const formatters = {
-  ...import('./formats/years'),
-  ...import('./formats/months'),
-  ...import('./formats/days'),
-  ...import('./formats/hours'),
-  ...import('./formats/minutes'),
-  ...import('./formats/seconds'),
-  ...import('./formats/milliseconds'),
-  ...import('./formats/timezone'),
-  ...import('./formats/misc')
+  ...years,
+  ...months,
+  ...days,
+  ...hours,
+  ...minutes,
+  ...seconds,
+  ...milliseconds,
+  ...timezone,
+  ...misc
 }
 
 /**
@@ -25,11 +34,11 @@ export const dateStringifier: DateStringifier = (date, format = '{zDD}/{zMM}/{yy
     throw new DateStringifierError(`${date} is not a valid Date`)
   }
 
-  const sortByLength = (a, b) => a.length > b.length ? -1 : 1
+  const sortByLength = (a: string, b: string) => a.length > b.length ? -1 : 1
   const formatKeys = Object.keys(formatters).sort(sortByLength).join('|')
   const formatRegex = new RegExp(`{(${formatKeys})}`, 'g')
-
+  
   return format.replace(formatRegex, e => {
-    return formatters[e.slice(1, -1)](date, language.toLowerCase())
+    return `${formatters[e.slice(1, -1)](date, language.toLowerCase() as AvailableLanguages)}`
   })
 }

@@ -1,7 +1,7 @@
-const { zeroToSixty } = require('../json/literalDates.json')
-const { addZero, verifyLanguage } = require('../utils/functions')
+import { zeroToSixty } from '../json/literalDates.json'
+import { addZero, verifyLanguage } from '../utils/functions'
 
-module.exports = {
+const secondsReplacer: DateReplacer = {
   zss: (date) => addZero(date.getSeconds()),
   ss: (date) => date.getSeconds(),
   second: (date, lang) => {
@@ -10,3 +10,5 @@ module.exports = {
     return zeroToSixty[lang][date.getSeconds()]
   }
 }
+
+export default secondsReplacer

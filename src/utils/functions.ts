@@ -1,21 +1,21 @@
 import { DateStringifierError } from "./classes";
 import { relativeTranslations } from "../json/literalDates.json";
 
-export const addZero = num => {
+export const addZero = (num: number) => {
   return num < 10 ? "0" + num : num;
 };
 
-export const plural = expression => {
-  return Math.floor(expression) !== 1 ? "s" : "";
+export const plural = (num: number) => {
+  return Math.floor(num) !== 1 ? "s" : "";
 };
 
-export const verifyLanguage = (json, language) => {
+export const verifyLanguage = (json: any, language: AvailableLanguages) => {
   if (!json[language]) {
     throw new DateStringifierError(`${language} is not a valid language`);
   }
 };
 
-export const getRelative = (type, date, lang) => {
+export const getRelative = (type: TimeTypes, date: Date, lang: AvailableLanguages) => {
   verifyLanguage(relativeTranslations, lang);
   const translations = relativeTranslations[lang];
   const { ago, fromNow } = translations;

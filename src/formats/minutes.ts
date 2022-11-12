@@ -1,7 +1,7 @@
-const { zeroToSixty } = require('../json/literalDates.json')
-const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
+import { zeroToSixty } from '../json/literalDates.json'
+import { addZero, verifyLanguage, getRelative } from '../utils/functions'
 
-module.exports = {
+const minutesReplacer: DateReplacer = {
   zmm: (date) => addZero(date.getMinutes()),
   mm: (date) => date.getMinutes(),
   minute: (date, lang) => {
@@ -11,3 +11,5 @@ module.exports = {
   },
   mmrel: (date, lang) => getRelative('minute', date, lang)
 }
+
+export default minutesReplacer

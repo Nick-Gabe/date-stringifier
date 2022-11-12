@@ -1,7 +1,7 @@
-const { hours } = require('../json/literalDates.json')
-const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
+import { hours } from '../json/literalDates.json'
+import { addZero, verifyLanguage, getRelative } from '../utils/functions'
 
-module.exports = {
+const hoursReplacer: DateReplacer = {
   hour: (date, lang) => {
     verifyLanguage(hours, lang)
 
@@ -19,3 +19,5 @@ module.exports = {
   hhp: (date) => date.getHours() >= 12 ? 'PM' : 'AM',
   hhrel: (date, lang) => getRelative('hour', date, lang)
 }
+
+export default hoursReplacer

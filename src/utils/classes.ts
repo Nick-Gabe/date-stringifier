@@ -1,5 +1,5 @@
 export class DateStringifierError extends Error {
-  constructor(message) {
+  constructor(message: string) {
     super(message)
     Error.captureStackTrace(this, this.constructor);
 

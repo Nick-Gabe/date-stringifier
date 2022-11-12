@@ -1,1 +1,1 @@
-export { dateStringifier } from './src/main.js'
+export { dateStringifier as default } from './src/main'
