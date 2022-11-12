@@ -1,7 +1,7 @@
-const { months } = require('../json/literalDates.json')
-const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
+import { months } from '../json/literalDates.json'
+import { addZero, verifyLanguage, getRelative } from '../utils/functions'
 
-module.exports = {
+const monthsReplacer: DateReplacer = {
   zMM: (date) => addZero(date.getMonth() + 1),
   MM: (date) => date.getMonth() + 1,
   month: (date, lang) => {
@@ -11,3 +11,5 @@ module.exports = {
   },
   MMrel: (date, lang) => getRelative('month', date, lang)
 }
+
+export default monthsReplacer

@@ -1,7 +1,7 @@
-const { days, ordinal } = require('../json/literalDates.json')
-const { addZero, verifyLanguage, getRelative } = require('../utils/functions')
+import { days, ordinal } from '../json/literalDates.json'
+import { addZero, verifyLanguage, getRelative } from '../utils/functions'
 
-module.exports = {
+const daysReplacer: DateReplacer = {
   day: (date, lang) => {
     verifyLanguage(days, lang)
     return days[lang][date.getDay()]
@@ -11,7 +11,7 @@ module.exports = {
   oDD: (date, lang) => {
     verifyLanguage(ordinal, lang)
     const ordinalList = ordinal[lang]
-    const lastDigit = date.getDate().toString().slice(-1)
+    const lastDigit = date.getDate().toString().slice(-1) as keyof typeof ordinalList
 
     if(typeof ordinalList === 'string') return `${date.getDate()}${ordinalList}`
 
@@ -22,3 +22,5 @@ module.exports = {
   DDm: (date) => date.getDay() === 0 ? 7 : date.getDay(),
   DDrel: (date, lang) => getRelative('day', date, lang)
 }
+
+export default daysReplacer

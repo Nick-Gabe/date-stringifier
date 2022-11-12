@@ -1,22 +1,22 @@
-const format = require('../../index')
+import format from '../../index'
 
 describe('The function parameters', function () {
 
   it('should use default if not specified', function () {
-    const result = format()
+    const result = format(new Date())
     expect(result).toMatch(/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/)
   })
 
   it('should not accept invalid dates', function () {
     expect(() => format(new Date('example'))).toThrowError('Invalid Date is not a valid Date')
-    expect(() => format('Not a date')).toThrowError('Not a date is not a valid Date')
+    expect(() => format('Not a date' as unknown as Date)).toThrowError('Not a date is not a valid Date')
   })
 
   it('should not accept invalid languages only if any date needs it', function () {
     const date = new Date(2022, 5, 25)
-    expect(format(date, '', 'invalid')).toBe('')
-    expect(format(date, '{DD}', 'invalid')).toBe('25')
-    expect(() => format(date, '{oDD}', 'invalid')).toThrowError('invalid is not a valid language')
+    expect(format(date, '', 'invalid' as AvailableLanguages)).toBe('')
+    expect(format(date, '{DD}', 'invalid' as AvailableLanguages)).toBe('25')
+    expect(() => format(date, '{oDD}', 'invalid' as AvailableLanguages)).toThrowError('invalid is not a valid language')
   })
 
 })

@@ -1,4 +1,4 @@
-module.exports = {
+const timezoneReplacer: DateReplacer = {
   tz: (date) => date.getTimezoneOffset(),
   utc: (date) => {
     const offset = date.getTimezoneOffset()
@@ -7,3 +7,5 @@ module.exports = {
     return `${offset > 0 ? '-' : '+'}${utcHours}`
   }
 }
+
+export default timezoneReplacer
