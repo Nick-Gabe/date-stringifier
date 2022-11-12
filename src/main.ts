@@ -1,15 +1,15 @@
-const { DateStringifierError } = require('./utils/classes')
+import { DateStringifierError } from './utils/classes'
 
 const formatters = {
-  ...require('./formats/years'),
-  ...require('./formats/months'),
-  ...require('./formats/days'),
-  ...require('./formats/hours'),
-  ...require('./formats/minutes'),
-  ...require('./formats/seconds'),
-  ...require('./formats/milliseconds'),
-  ...require('./formats/timezone'),
-  ...require('./formats/misc')
+  ...import('./formats/years'),
+  ...import('./formats/months'),
+  ...import('./formats/days'),
+  ...import('./formats/hours'),
+  ...import('./formats/minutes'),
+  ...import('./formats/seconds'),
+  ...import('./formats/milliseconds'),
+  ...import('./formats/timezone'),
+  ...import('./formats/misc')
 }
 
 /**
@@ -20,7 +20,7 @@ const formatters = {
  * @param [language=en] - The language to use for the date.
  * @returns A function that takes a date, a format, and a language.
  */
-function dateStringifier(date = new Date(), format = '{zDD}/{zMM}/{yyyy}', language = 'en') {
+export const dateStringifier: DateStringifier = (date, format = '{zDD}/{zMM}/{yyyy}', language = 'en') => {
   if (date instanceof Date === false || isNaN(date.getDay())) {
     throw new DateStringifierError(`${date} is not a valid Date`)
   }
@@ -33,5 +33,3 @@ function dateStringifier(date = new Date(), format = '{zDD}/{zMM}/{yyyy}', langu
     return formatters[e.slice(1, -1)](date, language.toLowerCase())
   })
 }
-
-module.exports = { dateStringifier }
