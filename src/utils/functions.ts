@@ -1,7 +1,7 @@
-const { DateStringifierError } = require("./classes")
-const { relativeTranslations } = require('../json/literalDates.json')
+import { DateStringifierError } from "./classes"
+import { relativeTranslations } from '../json/literalDates.json'
 
-module.exports = {
+const functions = {
   addZero(num) {
     return num < 10 ? '0' + num : num
   },
@@ -14,7 +14,7 @@ module.exports = {
     }
   },
   getRelative(type, date, lang) {
-    const { verifyLanguage, plural } = require('./functions.js')
+    const { verifyLanguage, plural } = this;
     verifyLanguage(relativeTranslations, lang)
     const translations = relativeTranslations[lang]
     const { ago, fromNow } = translations
@@ -43,3 +43,5 @@ module.exports = {
     return `${time} ${hasPlural} ${ago}`
   }
 }
+
+export default functions
