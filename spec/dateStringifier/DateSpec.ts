@@ -1,4 +1,4 @@
-const format = require('../../index')
+import format from '../../index'
 
 describe('The function parameters', function () {
 
