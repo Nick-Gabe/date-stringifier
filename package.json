@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Nick-Gabe/date-stringifier",
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^4.2.1"
+    "jasmine": "^4.2.1",
+    "typescript": "^4.8.4"
   }
 }
