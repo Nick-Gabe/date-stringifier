@@ -1,4 +1,4 @@
-import format from '../../index'
+import format from '../../src/index'
 
 describe('The function parameters', function () {
 
