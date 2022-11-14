@@ -2,12 +2,13 @@
   "name": "date-stringifier",
   "version": "2.0.0",
   "description": "Format your date into a string however you like.",
-  "module": "dist/index.esm.js",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "test": "ts-node node_modules/jasmine/bin/jasmine",
-    "build": "node build.js"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

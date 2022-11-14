@@ -29,7 +29,7 @@ const formatters = {
  * @param [language=en] - The language to use for the date.
  * @returns A function that takes a date, a format, and a language.
  */
-export const dateStringifier: DateStringifier = (date, format = '{zDD}/{zMM}/{yyyy}', language = 'en') => {
+export const dateStringifier = (date: Date, format: string = '{zDD}/{zMM}/{yyyy}', language: AvailableLanguages = 'en') => {
   if (date instanceof Date === false || isNaN(date.getDay())) {
     throw new DateStringifierError(`${date} is not a valid Date`)
   }
